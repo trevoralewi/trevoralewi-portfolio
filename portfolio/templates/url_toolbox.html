@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Toolbox Project</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'url_toolbox.css' %}">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a id="navbar-brand-link" class="navbar-brand custom-brand custom-hover" href="/"> Trevor Lewis </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link custom-link" href="{% url 'projects' %}">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-link" href="{% static 'trevorlewisresume.pdf' %}" download>Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-link" href="/#contact">Contact Me</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <!-- Intro section -->
+  <section id="intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <div class="transparent-card">
+                <h1 class="intro-heading"> URLToolbox <br> Developer Details</h1>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- URL Shortener -->
+  <section id="url-shortener" class="tool-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="image-container">
+            <img src="{% static 'shortener_help.png' %}" alt="URL Shortener Image 1" class="tool-image img1">
+            <img src="{% static 'shortener.png' %}" alt="URL Shortener Image 2" class="tool-image img2">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card text-card">
+            <h3>URL Shortener</h3>
+            <p>The URL Shortener tool is a convenient and efficient way to condense long website URLs into shorter formats. Built using Python, this tool leverages the Pyshorteners library to handle URL shortening functionality. The user interface is developed with the help of a custom Tkinter library, called customtkinter, which simplifies the process of creating the necessary input fields and buttons in the GUI. Upon pasting a URL into the designated entry box and clicking the 'Shorten URL' button, the application generates a shortened version of the provided URL.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- QR Code Generator -->
+    <section id="qr-code-generator" class="tool-section">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+            <div class="card text-card">
+                <h3>QR Code Generator</h3>
+                <p>The QR Code Generator tool empowers users to convert any URL into a scannable QR code with ease. Developed in Python, this tool employs the QRCode library to create QR codes from URLs. The customtkinter library is utilized to construct the graphical user interface, which enables users to paste the desired URL into the appropriate entry box and generate a QR code by clicking the 'Create QR Code' button. To ensure proper functionality, users must provide a valid URL as input.</p>
+            </div>
+            </div>
+            <div class="col-md-6">
+            <div class="image-container">
+                <img src="{% static 'qrcode_help.png' %}" alt="QR Code Generator Image 1" class="tool-image img1-qr">
+                <img src="{% static 'qr_code_generator.png' %}" alt="QR Code Generator Image 2" class="tool-image img2-qr">
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+  
+
+  <!-- Digital Flyer Generator -->
+    <section id="digital-flyer-generator" class="tool-section">
+        <div class="container">
+            <div class="tool-section">
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                    <div class="image-overlap">
+                        <img src="{% static 'flyer_generator_help.png' %}" alt="Digital Flyer Tool Image 1" class="tool-image img1">
+                        <img src="{% static 'flyer_generator.png' %}" alt="Digital Flyer Tool Image 2" class="tool-image img2">
+                    </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="card text-card">
+                        <h3>Digital Flyer Generator</h3>
+                        <p>The Digital Flyer Generator is a versatile marketing tool designed for businesses, individuals, and special events. This Python-based tool utilizes the Pillow (PIL) library for image manipulation and the NumPy library for numerical operations. The customtkinter library is used to create an interactive GUI, which allows users to upload photos, select templates, and input relevant information, such as title, description, and contact details. Text wrapping is handled by the textwrap module, ensuring that the content fits within the designated flyer area. Users can preview different templates, compare color schemes, and generate the final flyer by clicking the 'Generate' button. The generated flyer can then be saved and shared as needed.</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+  <!-- Project video section -->
+  <section id="project-video">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2>URL Toolbox Demo</h2>
+          <video width="640" height="360" controls>
+            <source src="{% static 'Toolkit_Rename.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Github Button -->
+  <section id="github-button">
+    <div class="container text-center">
+        <a href="https://github.com/trevoralewi" target="_blank" class="btn btn-dark btn-github">
+            <i class="fab fa-github"></i> View on GitHub
+        </a>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  
+  </html>
+  

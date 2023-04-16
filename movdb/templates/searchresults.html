@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyMovie Database Search Results</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% csrf_token %}
+
+    <!-- Custom CSS -->
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'searchresults.css' %}"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a
+        id="navbar-brand-link"
+        class="navbar-brand custom-brand custom-hover"
+        href="/"
+      >
+        Trevor Lewis
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="{% url 'projects' %}"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link custom-link"
+              href="{% static 'trevorlewisresume.pdf' %}"
+              download
+              >Resume</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="#contact">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="search-section">
+      <div class="container">
+        <div class="text-center">
+          <a href="{% url 'mymoviedatabase' %}">
+            <img
+              src="{% static 'mdlogo.png' %}"
+              alt="MyMovie Database"
+              class="logo-image"
+            />
+          </a>
+        </div>
+        <div class="d-flex justify-content-center h-100">
+          <div class="card search-card" id="searchbar">
+            <div class="card-body">
+              <form action="{% url 'search_results' %}" method="GET">
+                <div class="input-group form-group">
+                  <input
+                    type="text"
+                    name="query"
+                    class="form-control search-input"
+                    placeholder="Search Movies"
+                  />
+                  <button type="submit" class="btn btn-gold search-button">
+                    <i class="fas fa-search"></i
+                    ><span class="sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-section">
+      <hgroup class="mb20">
+        <h1>Search Results</h1>
+        <h2 class="lead">
+          <strong class="text-danger">{{ results|length }}</strong> results were
+          found for the search for
+          <strong class="text-danger">{{ query }}</strong>
+        </h2>
+      </hgroup>
+
+      {% for result in results %} {% if result.int_id %}
+      <article class="search-result row">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <a
+            href="{% url 'movieinfo' int_id=result.int_id %}"
+            title="{{ result.moviename }}"
+            class="thumbnail"
+            ><img
+              src="https://image.tmdb.org/t/p/w200{{ result.poster }}"
+              alt="{{ result.moviename }}"
+              class="rounded-img"
+          /></a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-2">
+          <ul class="meta-search">
+            <li>
+              <i class="glyphicon glyphicon-calendar"></i>
+              <span>Release Year: {{ result.releaseyear }}</span>
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-time"></i>
+              <span>Genres: {{ result.genres }}</span>
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-tags"></i>
+              <span>Runtime: {{ result.runtime }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+          <div class="title-fav-wrapper">
+            <h3>
+              <a
+                href="{% url 'movieinfo' int_id=result.int_id %}"
+                title="{{ result.moviename }}"
+                >{{ result.moviename }}</a
+              >
+            </h3>
+            {% if request.user.is_authenticated %}
+            <div class="favorite-icon">
+              {% if result.is_favorite %}
+              <a
+                href="#"
+                class="remove-favorite"
+                data-int-id="{{ result.int_id }}"
+                ><i class="fas fa-heart"></i
+              ></a>
+              {% else %}
+              <a href="#" class="add-favorite" data-int-id="{{ result.int_id }}"
+                ><i class="far fa-heart"></i
+              ></a>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+          <p>{{ result.description }}</p>
+          <span class="plus"
+            ><a href="#" title="{{ result.moviename }}"
+              ><i class="glyphicon glyphicon-plus"></i></a
+          ></span>
+        </div>
+        <span class="clearfix borda"></span>
+      </article>
+      {% endif %} {% endfor %}
+      <div class="pagination">
+        <span class="step-links">
+          {% if results.has_previous %}
+          <a href="?query={{ query }}&page=1">&laquo; first</a>
+          <a href="?query={{ query }}&page={{ results.previous_page_number }}"
+            >previous</a
+          >
+          {% endif %}
+
+          <span class="current">
+            Page {{ results.number }} of {{ results.paginator.num_pages }}
+          </span>
+
+          {% if results.has_next %}
+          <a href="?query={{ query }}&page={{ results.next_page_number }}"
+            >Next</a
+          >
+          <a href="?query={{ query }}&page={{ results.paginator.num_pages }}"
+            >Last &raquo;</a
+          >
+          {% endif %}
+        </span>
+      </div>
+    </section>
+
+    <!-- Developer details -->
+    <section id="developer">
+      <div class="developer-container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Learn More About How This Project Was Built</h2>
+            <a
+              href="{% url 'mymoviedatabase_developer' %}"
+              class="btn btn-primary"
+              >See Developer Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0]
+          .value;
+
+        document.querySelectorAll(".add-favorite").forEach((element) => {
+          element.addEventListener("click", (event) => {
+            event.preventDefault();
+            const intId = event.target.parentElement.dataset.intId;
+
+            fetch(
+              `/add_favorite/${intId}/?next={{ request.get_full_path|urlencode }}`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "X-CSRFToken": csrfToken,
+                },
+              }
+            ).then((response) => {
+              if (response.ok) {
+                window.location.reload();
+              }
+            });
+          });
+        });
+
+        document.querySelectorAll(".remove-favorite").forEach((element) => {
+          element.addEventListener("click", (event) => {
+            event.preventDefault();
+            const intId = event.target.parentElement.dataset.intId;
+
+            fetch(
+              `/remove_favorite/${intId}/?next={{ request.get_full_path|urlencode }}`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "X-CSRFToken": csrfToken,
+                },
+              }
+            ).then((response) => {
+              if (response.ok) {
+                window.location.reload();
+              }
+            });
+          });
+        });
+      });
+    </script>
+
+    <body>
+      <html></html>
+    </body>
+  </body>
+</html>

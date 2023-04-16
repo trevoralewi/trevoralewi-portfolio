@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trevor Lewis - Software Engineer</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home_styles.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a id="navbar-brand-link" class="navbar-brand custom-brand custom-hover" href="/"> Trevor Lewis </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="{% url 'projects' %}">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="{% static 'trevoralewi_resume.pdf' %}" download>Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="#contact">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="welcome">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center">
+              <h1>Trevor Lewis</h1>
+              <h2>Software Engineer that welcomes challenges <br>
+                and architects solutions.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{% static 'TL2.png' %}" class="profile-img rounded-circle" alt="Profile Picture">
+          </div>
+          <div class="col-md-8">
+            <div class="card-background">
+              <h3 class="card-title text-center">About Me</h3>
+              <p class="card-text">Hi, I'm Trevor, a former healthcare administrator turned passionate software engineer. With expertise in Python, Django, MySQL/SQL, HTML/CSS, and more, I'm eager to tackle new challenges and build innovative digital solutions. As a collaborative team player, I'm excited to work alongside others to create a meaningful impact in the tech world.<br><br>
+
+                Feel free to explore my featured projects to see some of my latest work, and check out my resume to learn more about my professional journey. If you're interested in connecting or discussing potential opportunities, I'd love to hear from you - head to my contact section to get in touch.<br><br>
+              </p>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="projectcarousel">
+      <div class="container">
+        <h2 class="text-center">Featured Projects</h2>
+        <div class="carousel-wrapper mx-auto">
+          <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#homeCarousel" data-slide-to="1"></li>
+              <li data-target="#homeCarousel" data-slide-to="2"></li>
+            </ol>
+    
+              
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="{% url 'projects' %}">
+            <img src="{% static 'movdbscreen.png' %}" class="d-block w-100" />
+            <div class="carousel-caption">
+              <h5>MyMovie Database</h5>
+              <p>MyMovie Database is a comprehensive movie database system that allows users to search for movies and retrieve detailed movie information.</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{% url 'projects' %}">
+            <img src="{% static 'toolboxhome.png' %}" class="d-block w-100" />
+            <div class="carousel-caption">
+              <h5>URL Toolbox</h5>
+              <p>The URL Toolbox is an all-in-one solution for managing your online presence, featuring a range of tools including a URL shortener, QR code generator, and digital flyer generator.</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="{% url 'projects' %}">
+            <img src="{% static 'portfoliohome2.png' %}" class="d-block w-100" />
+            <div class="carousel-caption">
+              <h5>Portfolio Website</h5>
+              <p>Built with Django, my portfolio website features Bootstrap styling and is equipped with a MySQL database for back-end functionality.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+        </div>
+              <!-- Controls -->
+            <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+              <span class="custom-arrow-left" aria-hidden="true"></span>
+              <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+              <span class="custom-arrow-right" aria-hidden="true"></span>
+              <span class="sr-only"></span>
+            </a>
+          </div>
+          </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-title">Contact Me</h3>
+                <p>Ready to connect? <br> Whether you're curious about a project, wish to discuss employment opportunities, or just want to say hi - reach out via LinkedIn, email, or GitHub. Let's chat!</p>
+                <div class="d-flex justify-content-center">
+                  <a href="https://www.linkedin.com/in/trevor-lewis-6a25561b1/" target="_blank" class="icon-link mx-3">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                  <a href="mailto:trevoralewi@gmail.com" class="icon-link mx-3">
+                    <i class="fas fa-envelope fa-2x"></i>
+                  </a>
+                  <a href="https://github.com/trevoralewi" target="_blank" class="icon-link mx-3">
+                    <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+  

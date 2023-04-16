@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trevor Lewis - Projects</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- Custom CSS -->
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'projects_styles.css' %}"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a
+        id="navbar-brand-link"
+        class="navbar-brand custom-brand custom-hover"
+        href="/"
+      >
+        Trevor Lewis
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="{% url 'projects' %}"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link custom-link"
+              href="{% static 'trevorlewisresume.pdf' %}"
+              download
+              >Resume</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="/#contact">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="welcome">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center">
+              <h1>Projects</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project-movdb" class="project-section">
+      <div class="project-entry">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 order-2 order-md-1">
+              <!-- Large square image box -->
+              <a href="{% url 'mymoviedatabase' %}">
+                <div class="image-box">
+                  <img
+                    src="{% static 'movdbscreen.png' %}"
+                    alt="Project Image"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-sm-12 order-1 order-md-2">
+              <div class="text-box bg-dark rounded">
+                <h2>MyMovie Database</h2>
+                <p>
+                  MyMovie Database is a comprehensive movie database system that
+                  allows users to search for movies and retrieve detailed movie
+                  information. It features a user-friendly interface and
+                  built-in authentication system.
+                </p>
+              </div>
+              <div class="project-buttons">
+                <button class="btn btn-primary">MySQL</button>
+                <button class="btn btn-primary">Python</button>
+                <button class="btn btn-primary">Django</button>
+                <button class="btn btn-primary">HTML5/CSS</button>
+                <button class="btn btn-primary">Bootstrap</button>
+                <button class="btn btn-primary">API</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project-toolbox" class="project-section">
+      <div class="project-entry">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <a href="{% url 'urltoolbox' %}">
+                <div class="image-box">
+                  <img src="{% static 'urlscreen.png' %}" alt="Project Image" />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="text-box bg-dark rounded">
+                <h2>URL Toolbox</h2>
+                <p>
+                  The URL Toolbox is an all-in-one solution for managing your
+                  online presence, featuring a range of tools including a URL
+                  shortener, QR code generator, and digital flyer generator. Its
+                  user-friendly interface and advanced features make it the
+                  perfect choice for anyone looking to streamline your online
+                  presence.
+                </p>
+              </div>
+              <div class="project-buttons">
+                <button class="btn btn-primary">Python</button>
+                <button class="btn btn-primary">Tkinter</button>
+                <button class="btn btn-primary">Numpy</button>
+                <button class="btn btn-primary">External Libraries</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project-portfolio" class="project-section">
+      <div class="project-entry">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <a href="{% url 'portfolio_developer' %}">
+                <div class="image-box">
+                  <img
+                    src="{% static 'portfoliohome2.png' %}"
+                    alt="Project Image"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="text-box bg-dark rounded">
+                <h2>Portfolio Website</h2>
+                <p>
+                  My portfolio website is built using the Django framework,
+                  featuring Bootstrap styling for a clean and modern design. The
+                  site is powered by a MySQL database to handle back-end
+                  functionality. Explore the showcased projects to gain insights
+                  into my software development skills and experiences, all
+                  presented within a user-friendly and responsive layout.
+                </p>
+              </div>
+              <div class="project-buttons">
+                <button class="btn btn-primary">Python</button>
+                <button class="btn btn-primary">Django</button>
+                <button class="btn btn-primary">Bootstrap</button>
+                <button class="btn btn-primary">MySQL</button>
+                <button class="btn btn-primary">Javascript</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

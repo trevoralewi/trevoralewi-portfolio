@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyMovie Database Movie Info</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% csrf_token %}
+
+    <!-- Custom CSS -->
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'movieinfo.css' %}"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a
+        id="navbar-brand-link"
+        class="navbar-brand custom-brand custom-hover"
+        href="/"
+      >
+        Trevor Lewis
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="{% url 'projects' %}"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link custom-link"
+              href="{% static 'trevorlewisresume.pdf' %}"
+              download
+              >Resume</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link custom-link" href="#contact">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="search-section">
+      <div class="container">
+        <div class="text-center">
+          <a href="{% url 'mymoviedatabase' %}">
+            <img
+              src="{% static 'mdlogo.png' %}"
+              alt="MyMovie Database"
+              class="logo-image"
+            />
+          </a>
+        </div>
+        <div class="d-flex justify-content-center h-100">
+          <div class="card search-card" id="searchbar">
+            <div class="card-body">
+              <form action="{% url 'search_results' %}" method="GET">
+                <div class="input-group form-group">
+                  <input
+                    type="text"
+                    name="query"
+                    class="form-control search-input"
+                    placeholder="Search Movies"
+                  />
+                  <button type="submit" class="btn btn-gold search-button">
+                    <i class="fas fa-search"></i
+                    ><span class="sr-only">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="background-container">
+      <div id="movieinfo-wrapper">
+        <section id="movieinfo">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <img
+                  src="https://image.tmdb.org/t/p/original{{ movie.poster }}"
+                  alt="{{ movie.moviename }}"
+                  class="poster-img"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="title-fav-wrapper">
+                  <h1>{{ movie.moviename }}</h1>
+                  {% if request.user.is_authenticated %}
+                  <div class="favorite-icon">
+                    {% if movie.is_favorite %}
+                    <a
+                      href="#"
+                      class="remove-favorite"
+                      data-int_id="{{ movie.int_id }}"
+                      ><i class="fas fa-heart"></i
+                    ></a>
+                    {% else %}
+                    <a
+                      href="{% url 'add_favorite' int_id=movie.int_id %}?next={{ request.get_full_path|urlencode }}"
+                      class="add-favorite"
+                      ><i class="far fa-heart"></i
+                    ></a>
+
+                    {% endif %}
+                  </div>
+                  {% endif %}
+                </div>
+                <p class="lead">{{ movie.tagline }}</p>
+                <p>{{ movie.description }}</p>
+                <ul>
+                  <li>
+                    <strong>Release Year:</strong> {{ movie.releaseyear }}
+                  </li>
+                  <li><strong>Runtime:</strong> {{ movie.runtime }} mins</li>
+                  <li><strong>Genres:</strong> {{ movie.genres }}</li>
+                  <li>
+                    <strong>Vote Average:</strong> {{ movie.vote_average }}
+                  </li>
+                  <li><strong>Budget:</strong> ${{ movie.budget }}</li>
+                  <li><strong>Revenue:</strong> ${{ movie.revenue }}</li>
+                  <li>
+                    <strong>Production Companies:</strong> {{
+                    movie.production_companies }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="section-heading">Director</h2>
+                <p>{{ movie.director }}</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="section-heading">Actors</h2>
+                <p>{{ movie.actors }}</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="section-heading">Writers</h2>
+                <p>{{ movie.writers }}</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="section-heading">Producers</h2>
+                <p>{{ movie.producers }}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Developer details -->
+    <section
+      id="developer"
+      style="background-image: url('https://image.tmdb.org/t/p/original{{ movie.backdrop_path }}')"
+    >
+      <div class="developer-container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <h2>Learn More About How This Project Was Built</h2>
+              <a
+                href="{% url 'mymoviedatabase_developer' %}"
+                class="btn btn-primary"
+                >See Developer Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% if request.user.is_authenticated %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const removeFavoriteLinks =
+          document.querySelectorAll(".remove-favorite");
+        removeFavoriteLinks.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const int_id = this.getAttribute("data-int_id");
+
+            fetch(`/remove_favorite/${int_id}/`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}",
+              },
+              body: JSON.stringify({}),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.success) {
+                  const newLink = document.createElement("a");
+                  newLink.href =
+                    `{% url 'add_favorite' int_id=0 %}?next={{ request.get_full_path|urlencode }}`.replace(
+                      "/0/",
+                      `/${int_id}/`
+                    );
+                  newLink.innerHTML = '<i class="far fa-heart"></i>';
+
+                  this.parentNode.replaceChild(newLink, this);
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+              });
+          });
+        });
+      });
+    </script>
+    {% endif %}
+  </body>
+</html>

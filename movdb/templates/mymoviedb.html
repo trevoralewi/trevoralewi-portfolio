@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MyMovie Database</title>
+
+ 
+   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+  {% load static %}
+
+  <script type="text/javascript" src="{% static 'mymoviedb.js' %}"></script>
+
+  <!-- Custom CSS -->
+
+  <link rel="stylesheet" type="text/css" href="{% static 'mymovdb.css' %}">
+
+
+
+
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBanN/6PmSRdXiYBqnQwOO+" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+  
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a id="navbar-brand-link" class="navbar-brand custom-brand custom-hover" href="/"> Trevor Lewis </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="{% url 'projects' %}">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="{% static 'trevorlewisresume.pdf' %}" download>Resume</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link custom-link" href="/#contact">Contact Me</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="search-section">
+  <div class="container">
+    <div class="text-center">
+      <img src="{% static 'mdlogo.png' %}" alt="MyMovie Database" class="logo-image">
+    </div>
+    <div class="d-flex justify-content-center h-100">
+      <div class="card search-card" id="searchbar">
+        <div class="card-body">
+          <form action="{% url 'search_results' %}" method="GET">
+            <div class="input-group form-group">
+              <input type="text" name="query" class="form-control search-input" placeholder="Search Movies">
+              <button type="submit" class="btn btn-gold search-button"><i class="fas fa-search"></i><span class="sr-only">Search</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="movcarousel">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <h1>Hot New Movies</h1>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="d-none d-lg-block">
+                <div class="slide-box">
+                  <a href="{% url 'movieinfo' int_id1 %}"><img class="poster-img" src="{{ poster_url1 }}" alt="First slide"></a>
+                  <a href="{% url 'movieinfo' int_id2 %}"><img class="poster-img" src="{{ poster_url2 }}" alt="First slide"></a>
+                  <a href="{% url 'movieinfo' int_id3 %}"><img class="poster-img" src="{{ poster_url3 }}" alt="First slide"></a>
+                </div>
+              </div>
+              <div class="d-none d-md-block d-lg-none">
+                <div class="slide-box">
+                  <a href="{% url 'movieinfo' int_id1 %}"><img class="poster-img" src="{{ poster_url1 }}" alt="First slide"></a>
+                  <a href="{% url 'movieinfo' int_id2 %}"><img class="poster-img" src="{{ poster_url2 }}" alt="First slide"></a>
+                  <a href="{% url 'movieinfo' int_id3 %}"><img class="poster-img" src="{{ poster_url3 }}" alt="First slide"></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-none d-lg-block">
+                <div class="slide-box">
+                  <a href="{% url 'movieinfo' int_id4 %}"><img class="poster-img" src="{{ poster_url4 }}" alt="Second slide"></a>
+                  <a href="{% url 'movieinfo' int_id5 %}"><img class="poster-img" src="{{ poster_url5 }}" alt="Second slide"></a>
+                  <a href="{% url 'movieinfo' int_id6 %}"><img class="poster-img" src="{{ poster_url6 }}" alt="Second slide"></a>
+                </div>
+              </div>
+              <div class="d-none d-md-block d-lg-none">
+                <div class="slide-box">
+                  <a href="{% url 'movieinfo' int_id4 %}"><img class="poster-img" src="{{ poster_url4 }}" alt="Second slide"></a>
+                  <a href="{% url 'movieinfo' int_id5 %}"><img class="poster-img" src="{{ poster_url5 }}" alt="Second slide"></a>
+                  <a href="{% url 'movieinfo' int_id6 %}"><img class="poster-img" src="{{ poster_url6 }}" alt="Second slide"></a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-none d-lg-block">
+                <div class="slide-box">
+                  <a href="{% url 'movieinfo' int_id7 %}"><img class="poster-img" src="{{ poster_url7 }}" alt="Third slide"></a>
+                  <a href="{% url 'movieinfo' int_id8 %}"><img class="poster-img" src="{{ poster_url8 }}" alt="Third slide"></a>
+                  <a href="{% url 'movieinfo' int_id9 %}"><img class="poster-img" src="{{ poster_url9 }}" alt="Third slide"></a>
+                </div>
+              </div>
+              <div class="d-none d-md-block d-lg-none">
+                <div class="slide-box">
+                  <a href="{% url 'movieinfo' int_id7 %}"><img class="poster-img" src="{{ poster_url7 }}" alt="Third slide"></a>
+                  <a href="{% url 'movieinfo' int_id8 %}"><img class="poster-img" src="{{ poster_url8 }}" alt="Third slide"></a>
+                  <a href="{% url 'movieinfo' int_id9 %}"><img class="poster-img" src="{{ poster_url9 }}" alt="Third slide"></a>
+                </div>
+              </div>
+          </div>
+        </div>
+          <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div id="sidebar">
+          <div class="favorites">
+            <button class="favorites-btn" data-toggle="collapse" data-target="#menu1" aria-controls="menu1" aria-expanded="false">
+              <i class="fas fa-angle-double-down arrow-down"></i>
+              <span>Favorites</span>
+              <i class="fas fa-angle-double-down arrow-down"></i>
+            </button>
+          </div>
+          <div class="middle-box">
+            <div id="menu1" class="collapse">
+              {% if user.is_authenticated %}
+                {% for favorite_movie in user.userprofile.favorites.all %}
+                    <a href="{% url 'movieinfo' favorite_movie.int_id %}" class="list-group-item">
+                      {{ favorite_movie.moviename }}
+                      <i class="fas fa-heart unfavorite-icon" data-movie-id="{{favorite_movie.int_id}}"></i> 
+                    </a>
+                  {% endfor %}
+                  {% csrf_token %}
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      const unfavoriteIcons = document.querySelectorAll('.unfavorite-icon');
+                      unfavoriteIcons.forEach(function(unfavoriteIcon) {
+                        unfavoriteIcon.addEventListener('click', function(event) {
+                          event.preventDefault();
+                          const movieId = event.target.dataset.movieId;
+                          removeFavorite(movieId);
+                        });
+                      });
+                    });
+                  </script>
+                {% else %}
+                  <div class="list-group-item">To Access Your Favorite Movies, Please Sign In Below</div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="login-bar">
+              {% if user.is_authenticated %}
+                  <a href="{% url 'logout' %}" class="btn login-btn">Logout</a>
+              {% else %}
+                  <a href="{% url 'login' %}" class="btn login-btn">Sign in or Register</a>
+              {% endif %}
+          </div>
+        </div>
+       </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Developer details -->
+<section id="developer">
+    <div class="developer-container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Learn More About How This Project Was Built</h2>
+          <a href="{% url 'mymoviedatabase_developer' %}" class="btn btn-primary">See Developer Details</a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<script>
+  function removeFavorite(movieId) {
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    const request = new Request(
+      `{% url 'remove_favorite' int_id=0 %}`.replace('0', movieId), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrfToken,
+        },
+        body: JSON.stringify({ movie_id: movieId }),
+      }
+    );
+
+    fetch(request)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Error removing favorite.');
+        }
+      })
+      .then((data) => {
+        if (data.success) {
+          const favoriteIcon = document.querySelector(`.unfavorite-icon[data-movie-id="${movieId}"]`);
+          favoriteIcon.closest('.list-group-item').remove();
+        } else {
+          alert('Error removing favorite. Please try again later.');
+        }
+      })
+      .catch((error) => {
+        alert('Error removing favorite. Please try again later.');
+      });
+  }
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('.favorites-btn').on('click', function() {
+      $(this).find('.arrow-down').toggleClass('arrow-up');
+    });
+  });
+</script>
+
+
+</body>
+</html>
