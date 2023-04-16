@@ -1,0 +1,86 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #444;
+}
+
+/* Header styles */
+nav {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+nav .navbar-brand {
+  font-weight: bold;
+  color: #3c6e71;
+}
+nav .navbar-toggler {
+  border: none;
+  outline: none;
+}
+nav .navbar-nav li a {
+  color: #444;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+nav .navbar-nav li.active a {
+  color: #3c6e71;
+}
+
+/* Header background image */
+header.bg-image {
+  background-image: url("{% static 'nature5.jpg' %}");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+header.bg-image h1, header.bg-image h2 {
+  color: white;
+}
+
+/* About Me section */
+section.bg-light {
+  padding: 3rem 0;
+}
+section.bg-light .card {
+  border: none;
+  border-radius: 0;
+}
+section.bg-light .card h3 {
+  color: #3c6e71;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+section.bg-light .card p {
+  font-size: 1.1rem;
+}
+section.bg-light .card img {
+  max-width: 100%;
+}
+
+/* Contact Me section */
+section.bg-light form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+section.bg-light form .form-group label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+section.bg-light form .form-control {
+  border-radius: 0;
+}
+section.bg-light form button {
+  margin-top: 1rem;
+  border-radius: 0;
+}
