@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'mymoviedb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movietracker',
-        'USER': 'movietracker_user',
-        'PASSWORD': 'Infinitejest97!',
-        'HOST': 'localhost',
+        'NAME': 'heroku_33dcc163942301e',
+        'USER': 'bda1a974c06337',
+        'PASSWORD': '651c3420',
+        'HOST': 'us-cdbr-east-06.cleardb.net',
         'PORT': '3306',
     }
 }
