@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'mymoviedb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_33dcc163942301e',
-        'USER': 'bda1a974c06337',
-        'PASSWORD': '651c3420',
-        'HOST': 'us-cdbr-east-06.cleardb.net',
+        'NAME': 'xnxab7neus0c923a',
+        'USER': 'y41pxj2qvx66qn6k',
+        'PASSWORD': 'u2z7cjoxitm9zskn',
+        'HOST': 'ebh2y8tqym512wqs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
