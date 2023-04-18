@@ -83,21 +83,20 @@ WSGI_APPLICATION = 'mymoviedb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+db_from_env = dj_database_url.parse(DATABASE_URL)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'xnxab7neus0c923a',
-        'USER': 'y41pxj2qvx66qn6k',
-        'PASSWORD': 'u2z7cjoxitm9zskn',
-        'HOST': 'ebh2y8tqym512wqs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        'PORT': '3306',
+        'NAME': db_from_env['NAME'],
+        'USER': db_from_env['USER'],
+        'PASSWORD': db_from_env['PASSWORD'],
+        'HOST': db_from_env['HOST'],
+        'PORT': db_from_env['PORT'],
     }
 }
-
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-if db_from_env:
-    DATABASES['default'].update(db_from_env)
-
 
 
 # Password validation
