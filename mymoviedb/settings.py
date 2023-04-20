@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%qd+s97h-2&ng5247pvnwk+&al9jdkmuv=7umy+mk-#)3qa(1x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = [
     'trevoralewi-portfolio.com', 
@@ -33,6 +33,8 @@ ALLOWED_HOSTS = [
     'trevoralewi-portfolio.herokuapp.com',
     'localhost',
     '127.0.0.1',
+    '127.0.0.1:8000',
+    'http://127.0.0.1:8000/',
 ]
 # Application definition
 
@@ -85,20 +87,32 @@ WSGI_APPLICATION = 'mymoviedb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
 
-db_from_env = dj_database_url.parse(DATABASE_URL)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': db_from_env['NAME'],
-        'USER': db_from_env['USER'],
-        'PASSWORD': db_from_env['PASSWORD'],
-        'HOST': db_from_env['HOST'],
-        'PORT': db_from_env['PORT'],
+if 'DATABASE_URL' in os.environ:
+    DATABASE_URL = os.environ.get("DATABASE_URL")
+    db_from_env = dj_database_url.parse(DATABASE_URL)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': db_from_env['NAME'],
+            'USER': db_from_env['USER'],
+            'PASSWORD': db_from_env['PASSWORD'],
+            'HOST': db_from_env['HOST'],
+            'PORT': db_from_env['PORT'],
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'movietracker',
+            'USER': 'root',
+            'PASSWORD': 'Infinitejest97!',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
 
 
 # Password validation
