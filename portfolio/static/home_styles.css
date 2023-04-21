@@ -537,3 +537,70 @@ nav #logo {
 .icon-link:hover i {
   color: gold;
 }
+/* Media Queries */
+@media (max-width: 991.98px) {
+  #about h3 {
+    font-size: 36px;
+    margin-left: 0;
+  }
+
+  .carousel-wrapper {
+    width: 100%;
+  }
+
+  .carousel-control-prev {
+    left: -50px;
+  }
+
+  .carousel-control-next {
+    right: -50px;
+  }
+
+  #contact .card {
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #welcome h1 {
+    font-size: 4rem;
+  }
+
+  #welcome h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-img {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .col-md-4 {
+    padding-top: 0;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+
+@media (max-width: 768px) {
+
+
+  #contact .card {
+      width: 80%;
+      margin-left: 10%;
+  }
+
+
+  .profile-img {
+    margin-left: 7%;
+}
+
+  #about h3 {
+      margin-left: -10%;
+  }
+}
+
+}
