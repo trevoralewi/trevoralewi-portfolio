@@ -1,0 +1,115 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #444;
+}
+
+/* Header styles */
+nav {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  padding-left: 2rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+
+/* Welcome section styles */
+#welcome {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("nature6.b40bf81b0723.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+}
+
+#welcome h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+#welcome h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* About section styles */
+#about {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  border: none;
+}
+
+.card {
+  border: none;
+}
+
+.card-body {
+  background-color: transparent;
+}
+
+.card-text {
+  margin-top: 1rem;
+}
+
+.card-title {
+  margin-bottom: 1.5rem;
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact section styles */
+#contact {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  border: none;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}

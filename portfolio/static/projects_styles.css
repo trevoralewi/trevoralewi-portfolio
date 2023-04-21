@@ -362,7 +362,7 @@ nav #logo {
   top: -30px;
 }
 
-/* Buttons common styles */
+
 .project-buttons {
   display: flex;
   justify-content: flex-start;
@@ -375,7 +375,7 @@ nav #logo {
   margin-bottom: 0.5rem;
 }
 
-/* Individual project section button adjustments */
+
 #project-movdb .project-buttons {
   margin-top: 14rem;
   margin-left: -1rem;
@@ -390,3 +390,53 @@ nav #logo {
   margin-top: 15.5rem;
   margin-left: -1rem;
 }
+
+@media (max-width: 992px) {
+  .project-entry .text-box {
+    position: static;
+    margin: 1rem 0;
+    box-shadow: none;
+  }
+
+  .project-entry .image-box img {
+    border-radius: 5px;
+  
+  }
+
+  #project-movdb .project-entry .text-box,
+  #project-toolbox .project-entry .text-box,
+  #project-portfolio .project-entry .text-box {
+    margin: 1rem 0;
+  }
+
+  #project-movdb .project-buttons,
+  #project-toolbox .project-buttons,
+  #project-portfolio .project-buttons {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  
+  .project-entry .image-box img {
+    border-radius: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+  #welcome h1 {
+    font-size: 2.5rem;
+  }
+
+  .project-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .project-entry .image-box img {
+    border-radius: 2px;
+  }
+}
+

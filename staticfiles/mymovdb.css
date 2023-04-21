@@ -21,30 +21,30 @@
   display: flex;
 }
 
-.custom-brand .nav-area{
+.custom-brand .nav-area {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  display:-webkit-flex;
+  transform: translate(-50%, -50%);
+  display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
-.custom-brand .nav-area li{
+.custom-brand .nav-area li {
   list-style: none;
 }
 
 .custom-hover:hover.navbar-brand {
   color: white;
-  transition: .5s;
-  }
+  transition: 0.5s;
+}
 
-.custom-brand .nav-area li a{
+.custom-brand .nav-area li a {
   position: relative;
   display: block;
   text-align: center;
@@ -53,50 +53,50 @@
   font-size: 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
-  transition: .5s;
+  transition: 0.5s;
   padding: 5px 10px;
 }
 
-.custom-brand .nav-area li a:hover{
+.custom-brand .nav-area li a:hover {
   color: #fff;
   background: black;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.custom-brand .nav-area li a::before{
-  content: '';
+.custom-brand .nav-area li a::before {
+  content: "";
   position: absolute;
   bottom: 15px;
-  left:15px;
+  left: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 0 0 2px 2px;
-  transition: .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
-.custom-brand .nav-area li a:hover:before{
+.custom-brand .nav-area li a:hover:before {
   bottom: -8px;
   left: -8px;
   opacity: 1;
 }
 
-.custom-brand .nav-area li a:after{
-  content: '';
+.custom-brand .nav-area li a:after {
+  content: "";
   position: absolute;
-  top:15px;
+  top: 15px;
   right: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 2px 2px 0 0;
-  transition:  .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
-.custom-brand .nav-area li a:hover:after{
-  top:-8px;
+.custom-brand .nav-area li a:hover:after {
+  top: -8px;
   right: -8px;
   opacity: 1;
 }
@@ -104,7 +104,7 @@
 .custom-hover:hover {
   color: gold;
   background: black;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-brand .nav-area li a {
@@ -113,46 +113,45 @@
 
 .custom-hover:hover .nav-area li a {
   color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover .nav-area li a:hover {
   color: #fff;
   background: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover .nav-area li a:hover:before {
   border-color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover .nav-area li a:hover:after {
   border-color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 .custom-hover:hover {
   color: gold;
   background: black;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover #navbar-brand-link.nav-link {
   color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-
 .custom-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 15px;
-  left:15px;
+  left: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 0 0 2px 2px;
-  transition: .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
@@ -163,36 +162,35 @@
 }
 
 .custom-hover::after {
-  content: '';
+  content: "";
   position: absolute;
-  top:15px;
+  top: 15px;
   right: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 2px 2px 0 0;
-  transition:  .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
 .custom-hover:hover:after {
-  top:-8px;
+  top: -8px;
   right: -8px;
   opacity: 1;
   color: gold;
 }
 
 .navbar-nav .nav-item .nav-link:hover::before {
-  visibility        : visible;
-  -webkit-transform : scaleX(1);
-  transform         : scaleX(1);
-  background-color  : gold;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: gold;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
   color: gold;
 }
-
 
 .navbar-toggler {
   border: none;
@@ -221,39 +219,40 @@ nav #logo {
 }
 
 .custom-link {
-  display           : inline-block;
-  position          : relative;
-  font-size         : 1.3rem;
-  color             : white;
-  padding-bottom    : 5px;
+  display: inline-block;
+  position: relative;
+  font-size: 1.3rem;
+  color: white;
+  padding-bottom: 5px;
   -webkit-transition: color 0.5s ease;
-  transition        : color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 .custom-link::before {
-  position          : absolute;
-  content           : '';
-  width             : 100%;
-  height            : 2px;
-  bottom            : 0;
-  left              : 0;
-  background-color  : transparent;
-  visibility        : hidden;
-  -webkit-transform : scaleX(0);
-  transform         : scaleX(0);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
-  transition        : all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .custom-link:hover::before {
-  visibility        : visible;
-  -webkit-transform : scaleX(1);
-  transform         : scaleX(1);
-  background-color  : gold;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: gold;
 }
-@import url('https://fonts.googleapis.com/css?family=Numans');
-html,body{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Numans");
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 h1 {
   font-size: 40px;
@@ -264,7 +263,7 @@ h1 {
 }
 
 .search-section {
-  background-image: url('movbackground2.jpg');
+  background-image: url("movbackground2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 75vh;
@@ -273,11 +272,11 @@ h1 {
 
 .logo-image {
   position: absolute;
-  top: 200px; /* Adjust as needed for positioning */
+  top: 200px;
   left: 500px;
   transform: translateX(-50%);
   z-index: 10;
-  border-radius: 25px; /* Adjust as needed for rounded edges */
+  border-radius: 25px;
   height: 25%;
 }
 
@@ -306,13 +305,13 @@ h1 {
 }
 
 .card-body {
-  padding-top: 20px; /* Adjust the value as needed */
+  padding-top: 20px;
 }
 
 .search-input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  max-width: 420px; 
+  max-width: 420px;
   border: none;
 }
 
@@ -321,7 +320,7 @@ h1 {
   border-bottom-left-radius: 0;
   padding-left: 10px;
   padding-right: 10px;
-  width: 50px; 
+  width: 50px;
   border: none;
 }
 
@@ -336,7 +335,6 @@ h1 {
   color: #000;
 }
 
-
 /* Sidebar */
 #sidebar {
   height: 100%;
@@ -347,7 +345,6 @@ h1 {
   width: 470px;
 }
 
-/* Favorites Button */
 .favorites {
   background-color: gold;
   text-align: center;
@@ -363,7 +360,7 @@ h1 {
   padding: 10px 0;
   cursor: pointer;
   border-radius: 0;
-  outline: none; 
+  outline: none;
 }
 
 .favorites-btn:focus {
@@ -371,9 +368,6 @@ h1 {
   border: none;
 }
 
-
-
-/* Middle Box */
 .middle-box {
   background-color: rgba(255, 102, 102, 0.8);
   height: 65vh;
@@ -387,8 +381,8 @@ h1 {
   position: absolute;
   width: 100%;
   z-index: 1;
-  max-height: 61vh; 
-  overflow-y: auto;  
+  max-height: 61vh;
+  overflow-y: auto;
 }
 
 .unfavorite-icon {
@@ -406,10 +400,10 @@ h1 {
   padding: 5px 10px;
   color: black;
   text-decoration: none;
-  background: none; 
-  border: none; 
-  font-weight: bold; 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+  background: none;
+  border: none;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .list-group-item:hover {
@@ -417,7 +411,6 @@ h1 {
   color: black;
 }
 
-/* Login Bar */
 .login-bar {
   background-color: gold;
   text-align: center;
@@ -454,7 +447,6 @@ h1 {
 .carousel-item .slide-box {
   height: 400px;
   width: 1000px;
-
 }
 
 #movcarousel h1 {
@@ -474,70 +466,61 @@ h1 {
 }
 
 .carousel {
-padding: 30px;
-left: -200px;
-
+  padding: 30px;
+  left: -200px;
 }
 
 .slide-box {
-display: flex;
-justify-content: center;
-max-width: 1800px;
+  display: flex;
+  justify-content: center;
+  max-width: 1800px;
 }
-
 
 .poster-img {
   margin-right: 10px;
   border-radius: 10px;
-  width: auto; 
+  width: auto;
   min-width: 260px;
-  height: 100%; 
+  height: 100%;
   max-height: 500px;
   margin: 0 5px;
   object-fit: cover;
 }
 
-
-
 @media (min-width: 576px) and (max-width: 767.98px) {
-.slide-box img {
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
-}
+  .slide-box img {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-.slide-box img {
-  -ms-flex: 0 0 33.3333%;
-  flex: 0 0 33.3333%;
-  max-width: 33.3333%;
-}
-}
-
-@media (min-width: 992px)
-{
-.slide-box img {
-  -ms-flex: 0 0 25%;
-  flex: 0 0 25%;
-  max-width: 25%;
+  .slide-box img {
+    -ms-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
 }
 
-.movcarousel {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  
- 
-}
+@media (min-width: 992px) {
+  .slide-box img {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
 
+  .movcarousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }
 .carousel-card {
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.6); /* set the background color to black with a 60% opacity */
+  background-color: rgba(0, 0, 0, 0.6);
   padding-bottom: 10px;
   border-radius: 20px;
- 
 }
 
 .carousel-control-prev {
@@ -545,12 +528,13 @@ max-width: 1800px;
 }
 
 .carousel-control-next {
-  margin-right: -30px; 
+  margin-right: -30px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%)
+    contrast(100%);
 }
 
 .carousel-control-prev:hover,
@@ -564,11 +548,10 @@ max-width: 1800px;
   background-color: gold;
 }
 
-
 .carousel-caption {
-background-color: rgba(0, 0, 0, 0.5);
-padding: 20px;
-border-radius: .5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 0.5rem;
 }
 
 /* Style for Developer Details section */
@@ -585,7 +568,7 @@ border-radius: .5rem;
   margin-bottom: 20px;
 }
 
-#developer .developer-container{
+#developer .developer-container {
   height: 150px;
   display: flex;
   justify-content: center;
@@ -593,7 +576,7 @@ border-radius: .5rem;
   margin-top: 60px;
   width: 100%;
 }
-  
+
 #developer p {
   font-size: 18px;
   line-height: 1.5;
@@ -610,4 +593,3 @@ border-radius: .5rem;
   justify-content: center;
   align-items: center;
 }
-

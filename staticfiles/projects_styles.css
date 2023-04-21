@@ -2,9 +2,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #444;
-  background-color: #e6e6e6
+  background-color: #e6e6e6;
 }
 
 a {
@@ -39,30 +39,30 @@ a:hover {
   display: flex;
 }
 
-.custom-brand .nav-area{
+.custom-brand .nav-area {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  display:-webkit-flex;
+  transform: translate(-50%, -50%);
+  display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
-.custom-brand .nav-area li{
+.custom-brand .nav-area li {
   list-style: none;
 }
 
 .custom-hover:hover.navbar-brand {
   color: white;
-  transition: .5s;
-  }
+  transition: 0.5s;
+}
 
-.custom-brand .nav-area li a{
+.custom-brand .nav-area li a {
   position: relative;
   display: block;
   text-align: center;
@@ -71,50 +71,50 @@ a:hover {
   font-size: 1.5rem;
   text-decoration: none;
   text-transform: uppercase;
-  transition: .5s;
+  transition: 0.5s;
   padding: 5px 10px;
 }
 
-.custom-brand .nav-area li a:hover{
+.custom-brand .nav-area li a:hover {
   color: #fff;
   background: black;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.custom-brand .nav-area li a::before{
-  content: '';
+.custom-brand .nav-area li a::before {
+  content: "";
   position: absolute;
   bottom: 15px;
-  left:15px;
+  left: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 0 0 2px 2px;
-  transition: .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
-.custom-brand .nav-area li a:hover:before{
+.custom-brand .nav-area li a:hover:before {
   bottom: -8px;
   left: -8px;
   opacity: 1;
 }
 
-.custom-brand .nav-area li a:after{
-  content: '';
+.custom-brand .nav-area li a:after {
+  content: "";
   position: absolute;
-  top:15px;
+  top: 15px;
   right: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 2px 2px 0 0;
-  transition:  .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
-.custom-brand .nav-area li a:hover:after{
-  top:-8px;
+.custom-brand .nav-area li a:hover:after {
+  top: -8px;
   right: -8px;
   opacity: 1;
 }
@@ -122,7 +122,7 @@ a:hover {
 .custom-hover:hover {
   color: gold;
   background: black;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-brand .nav-area li a {
@@ -131,50 +131,45 @@ a:hover {
 
 .custom-hover:hover .nav-area li a {
   color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover .nav-area li a:hover {
   color: #fff;
   background: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover .nav-area li a:hover:before {
   border-color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover .nav-area li a:hover:after {
   border-color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 .custom-hover:hover {
   color: gold;
   background: black;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .custom-hover:hover #navbar-brand-link.nav-link {
   color: gold;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-
-
-
-
-
 .custom-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 15px;
-  left:15px;
+  left: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 0 0 2px 2px;
-  transition: .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
@@ -185,25 +180,24 @@ a:hover {
 }
 
 .custom-hover::after {
-  content: '';
+  content: "";
   position: absolute;
-  top:15px;
+  top: 15px;
   right: 15px;
   width: 15px;
   height: 15px;
   border: 2px solid black;
   border-width: 2px 2px 0 0;
-  transition:  .5s;
+  transition: 0.5s;
   opacity: 0;
 }
 
 .custom-hover:hover:after {
-  top:-8px;
+  top: -8px;
   right: -8px;
   opacity: 1;
   color: gold;
 }
-
 
 .navbar-toggler {
   border: none;
@@ -232,35 +226,35 @@ nav #logo {
 }
 
 .custom-link {
-  display           : inline-block;
-  position          : relative;
-  font-size         : 1.3rem;
-  color             : white;
-  padding-bottom    : 5px;
+  display: inline-block;
+  position: relative;
+  font-size: 1.3rem;
+  color: white;
+  padding-bottom: 5px;
   -webkit-transition: color 0.5s ease;
-  transition        : color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 .custom-link::before {
-  position          : absolute;
-  content           : '';
-  width             : 100%;
-  height            : 2px;
-  bottom            : 0;
-  left              : 0;
-  background-color  : transparent;
-  visibility        : hidden;
-  -webkit-transform : scaleX(0);
-  transform         : scaleX(0);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
-  transition        : all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .custom-link:hover::before {
-  visibility        : visible;
-  -webkit-transform : scaleX(1);
-  transform         : scaleX(1);
-  background-color  : gold;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: gold;
 }
 
 .nav-item {
@@ -269,34 +263,34 @@ nav #logo {
 }
 
 .navbar-nav .nav-item .nav-link:hover::before {
-  visibility        : visible;
-  -webkit-transform : scaleX(1);
-  transform         : scaleX(1);
-  background-color  : aqua;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: aqua;
 }
 
 .navbar-nav .nav-item .nav-link::before {
-  position          : absolute;
-  content           : '';
-  width             : 100%;
-  height            : 2px;
-  bottom            : 0;
-  left              : 0;
-  background-color  : transparent;
-  visibility        : hidden;
-  -webkit-transform : scaleX(0);
-  transform         : scaleX(0);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
-  transition        : all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: aqua;
+  color: aqua;
 }
 
 /* Welcome section styles */
 #welcome {
-  background-image: url('tent.png');
+  background-image: url("tent.png");
   background-color: #e6e6e6;
   background-position: center center;
   background-repeat: no-repeat;
@@ -346,7 +340,8 @@ nav #logo {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  filter: grayscale(100%) sepia(50%) hue-rotate(180deg) saturate(300%) brightness(95%) contrast(85%) drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  filter: grayscale(100%) sepia(50%) hue-rotate(180deg) saturate(300%)
+    brightness(95%) contrast(85%) drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
 .project-entry .image-box img:hover {
@@ -367,7 +362,7 @@ nav #logo {
   top: -30px;
 }
 
-/* Buttons common styles */
+
 .project-buttons {
   display: flex;
   justify-content: flex-start;
@@ -376,11 +371,11 @@ nav #logo {
 }
 
 .project-buttons button {
-  margin-right: .5rem;
-  margin-bottom: .5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Individual project section button adjustments */
+
 #project-movdb .project-buttons {
   margin-top: 14rem;
   margin-left: -1rem;
@@ -395,3 +390,53 @@ nav #logo {
   margin-top: 15.5rem;
   margin-left: -1rem;
 }
+
+@media (max-width: 992px) {
+  .project-entry .text-box {
+    position: static;
+    margin: 1rem 0;
+    box-shadow: none;
+  }
+
+  .project-entry .image-box img {
+    border-radius: 5px;
+  
+  }
+
+  #project-movdb .project-entry .text-box,
+  #project-toolbox .project-entry .text-box,
+  #project-portfolio .project-entry .text-box {
+    margin: 1rem 0;
+  }
+
+  #project-movdb .project-buttons,
+  #project-toolbox .project-buttons,
+  #project-portfolio .project-buttons {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  
+  .project-entry .image-box img {
+    border-radius: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+  #welcome h1 {
+    font-size: 2.5rem;
+  }
+
+  .project-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .project-entry .image-box img {
+    border-radius: 2px;
+  }
+}
+

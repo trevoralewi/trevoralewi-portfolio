@@ -1,0 +1,409 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 50;
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.custom-brand {
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.custom-brand:hover .nav-area {
+  display: flex;
+}
+
+.custom-brand .nav-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-brand .nav-area li {
+  list-style: none;
+}
+
+.custom-hover:hover.navbar-brand {
+  color: white;
+  transition: 0.5s;
+}
+
+.custom-brand .nav-area li a {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 20px;
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  padding: 5px 10px;
+}
+
+.custom-brand .nav-area li a:hover {
+  color: #fff;
+  background: black;
+  transition: 0.5s;
+}
+
+.custom-brand .nav-area li a::before {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-width: 0 0 2px 2px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.custom-brand .nav-area li a:hover:before {
+  bottom: -8px;
+  left: -8px;
+  opacity: 1;
+}
+
+.custom-brand .nav-area li a:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-width: 2px 2px 0 0;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.custom-brand .nav-area li a:hover:after {
+  top: -8px;
+  right: -8px;
+  opacity: 1;
+}
+
+.custom-hover:hover {
+  color: gold;
+  background: black;
+  transition: 0.5s;
+}
+
+.custom-brand .nav-area li a {
+  z-index: 1;
+}
+
+.custom-hover:hover .nav-area li a {
+  color: gold;
+  transition: 0.5s;
+}
+
+.custom-hover:hover .nav-area li a:hover {
+  color: #fff;
+  background: gold;
+  transition: 0.5s;
+}
+
+.custom-hover:hover .nav-area li a:hover:before {
+  border-color: gold;
+  transition: 0.5s;
+}
+
+.custom-hover:hover .nav-area li a:hover:after {
+  border-color: gold;
+  transition: 0.5s;
+}
+.custom-hover:hover {
+  color: gold;
+  background: black;
+  transition: 0.5s;
+}
+
+.custom-hover:hover #navbar-brand-link.nav-link {
+  color: gold;
+  transition: 0.5s;
+}
+
+.custom-hover::before {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-width: 0 0 2px 2px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.custom-hover:hover:before {
+  bottom: -8px;
+  left: -8px;
+  opacity: 1;
+}
+
+.custom-hover::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid black;
+  border-width: 2px 2px 0 0;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.custom-hover:hover:after {
+  top: -8px;
+  right: -8px;
+  opacity: 1;
+  color: gold;
+}
+
+.navbar-nav .nav-item .nav-link:hover::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: gold;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: gold;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav {
+  background-color: #e6e6e6;
+  height: 60px;
+  padding: 0 20px;
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+}
+
+nav #logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.custom-link {
+  display: inline-block;
+  position: relative;
+  font-size: 1.3rem;
+  color: white;
+  padding-bottom: 5px;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.custom-link::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.custom-link:hover::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: gold;
+}
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: black;
+  margin-left: 230px;
+}
+
+.intro {
+  background-image: url("movbackground2.9cc3917af852.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 55vh;
+  background-color: transparent;
+}
+
+.logo-image {
+  position: absolute;
+  align-items: center;
+  margin-top: 105px;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-radius: 25px;
+  height: 30%;
+}
+
+.container {
+  height: 100%;
+  align-content: center;
+  padding: 10px;
+}
+
+.search-card {
+  height: 100px;
+  top: 20px;
+  margin-bottom: auto;
+  right: -120px;
+  width: 600px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card {
+  height: 80px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: -10px;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-body {
+  padding-top: 20px;
+}
+
+/* Registration Form */
+
+.register {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+.register-form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.register-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.register-form .form-control {
+  height: 45px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.register-form label {
+  font-weight: bold;
+}
+
+.register-form button {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-weight: bold;
+  font-size: 16px;
+  height: 45px;
+  border-radius: 5px;
+  margin-top: 10%;
+}
+.registration-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+}
+
+.password-requirements {
+  padding-left: 1rem;
+  list-style-type: disc;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.error-message {
+  color: red;
+}
+
+/* Style for Developer Details section */
+
+#developer {
+  background-color: #e6e6e6;
+  opacity: 1;
+  display: flex;
+  padding: 20px;
+}
+
+#developer h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+#developer .developer-container {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+}
+
+#developer p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+#developer .btn {
+  font-size: 20px;
+}
+
+#developer .col-md-12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
