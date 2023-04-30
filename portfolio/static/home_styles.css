@@ -209,8 +209,8 @@ a:hover {
 
 nav {
   background-color: #e6e6e6;
-  height: 60px;
-  padding: 0 20px;
+  height: 8.4vh;
+  padding: 0 1.3vw;
 }
 
 nav a {
@@ -229,7 +229,7 @@ nav #logo {
   position: relative;
   font-size: 1.3rem;
   color: white;
-  padding-bottom: 5px;
+  padding-bottom: 0.3rem;
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
@@ -238,7 +238,7 @@ nav #logo {
   position: absolute;
   content: "";
   width: 100%;
-  height: 2px;
+  height: 0.1rem;
   bottom: 0;
   left: 0;
   background-color: transparent;
@@ -258,7 +258,7 @@ nav #logo {
 
 .nav-item {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 1.3vw;
 }
 
 .navbar-nav .nav-item .nav-link:hover::before {
@@ -272,7 +272,7 @@ nav #logo {
   position: absolute;
   content: "";
   width: 100%;
-  height: 2px;
+  height: 0.3vh;
   bottom: 0;
   left: 0;
   background-color: transparent;
@@ -320,26 +320,25 @@ nav #logo {
 }
 
 #about h3 {
-  font-size: 44px;
+  font-size: 2.9rem;
   font-weight: bold;
-  margin-left: -520px;
+  margin-left: -34.3vw;
   color: black;
 }
 
 #about p {
-  font-size: 18px;
+  font-size: 1.2rem;
   color: black;
 }
 
 .profile-img {
   border-radius: 50%;
-  height: 300px;
-  width: 300px;
+  height: 20vw;
+  width: 20vw;
   object-fit: cover;
-  display: block;
-  margin-left: -40px;
-  align-self: flex-start;
+  margin-bottom: 1rem;
 }
+ 
 
 .col-md-4 {
   padding-top: 20px;
@@ -348,7 +347,7 @@ nav #logo {
 /* Project Carousel */
 
 #projectcarousel h2 {
-  font-size: 44px;
+  font-size: 2.9rem;
   font-weight: bold;
   color: black;
   margin-left: -10px;
@@ -370,7 +369,7 @@ nav #logo {
 
 #projectcarousel .carousel-inner img {
   width: 100%;
-  max-height: 350px;
+  max-height: 23.1vw;
   border-radius: 10px;
   margin: 0 auto;
 }
@@ -394,6 +393,7 @@ nav #logo {
   justify-content: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  font-size: 1rem;
 }
 
 .custom-arrow-left,
@@ -560,9 +560,42 @@ nav #logo {
     left: 0;
     width: 100%;
   }
+
+  .profile-img {
+    height: 35vw;
+    width: 35vw;
+  }
 }
 
 @media (max-width: 767.98px) {
+
+  .navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280,0,0,0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .navbar-collapse {
+    background-color: #e6e6e6;
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 1rem; /* Add left padding to the nav links */
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+
+
+
   #welcome h1 {
     font-size: 4rem;
   }
@@ -572,8 +605,15 @@ nav #logo {
   }
 
   .profile-img {
-    margin-left: 0;
+    height: 50vw;
+    width: 50vw;
+    margin-left: 21%;
     margin-bottom: 20px;
+    padding: 5px;
+  }
+
+  #projectcarousel .carousel-inner img {
+    max-height: 40vw;
   }
 
   .col-md-4 {
@@ -585,6 +625,10 @@ nav #logo {
     display: none;
   }
 
+  .carousel-caption {
+    display: none;
+  }
+
 @media (max-width: 768px) {
 
 
@@ -593,10 +637,13 @@ nav #logo {
       margin-left: 10%;
   }
 
+  .carousel-caption {
+    display: none;
+  }
 
-  .profile-img {
-    margin-left: 7%;
-}
+  #projectcarousel .carousel-inner img {
+    max-height: 60vw;
+  }
 
   #about h3 {
       margin-left: -10%;
