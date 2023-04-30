@@ -418,6 +418,32 @@ nav #logo {
 }
 
 @media (max-width: 768px) {
+  .navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280,0,0,0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .navbar-collapse {
+    background-color: #e6e6e6;
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 1rem; /* Add left padding to the nav links */
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+
+
 
   
   .project-entry .image-box img {
@@ -429,6 +455,33 @@ nav #logo {
   #welcome h1 {
     font-size: 2.5rem;
   }
+
+  .navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280,0,0,0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .navbar-collapse {
+    background-color: #e6e6e6;
+    position: absolute;
+    top: 7vh;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 1rem; /* Add left padding to the nav links */
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+
+
 
   .project-section {
     margin-top: 3rem;
