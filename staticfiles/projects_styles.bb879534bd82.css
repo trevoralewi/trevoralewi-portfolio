@@ -3,7 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: black;
+  color: #444;
+  background-color: #e6e6e6;
 }
 
 a {
@@ -209,8 +210,8 @@ a:hover {
 
 nav {
   background-color: #e6e6e6;
-  height: 8.4vh;
-  padding: 0 1.3vw;
+  height: 60px;
+  padding: 0 20px;
 }
 
 nav a {
@@ -229,7 +230,7 @@ nav #logo {
   position: relative;
   font-size: 1.3rem;
   color: white;
-  padding-bottom: 0.3rem;
+  padding-bottom: 5px;
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
@@ -238,7 +239,7 @@ nav #logo {
   position: absolute;
   content: "";
   width: 100%;
-  height: 0.1rem;
+  height: 2px;
   bottom: 0;
   left: 0;
   background-color: transparent;
@@ -258,21 +259,21 @@ nav #logo {
 
 .nav-item {
   display: inline-block;
-  margin-right: 1.3vw;
+  margin-right: 20px;
 }
 
 .navbar-nav .nav-item .nav-link:hover::before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  background-color: gold;
+  background-color: aqua;
 }
 
 .navbar-nav .nav-item .nav-link::before {
   position: absolute;
   content: "";
   width: 100%;
-  height: 0.3vh;
+  height: 2px;
   bottom: 0;
   left: 0;
   background-color: transparent;
@@ -284,290 +285,176 @@ nav #logo {
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-  color: gold;
+  color: aqua;
 }
 
 /* Welcome section styles */
 #welcome {
-  background-image: url("ymountain.png");
+  background-image: url("tent.8b5f41771da2.png");
+  background-color: #e6e6e6;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  height: 100vh;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
 #welcome h1 {
-  font-size: 6rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
   color: #fff;
-  text-shadow: 2px 2px #000;
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px #000;
 }
-
-#welcome h2 {
-  font-size: 2.5rem;
-  color: #fff;
-  text-shadow: 2px 2px #000;
-}
-
-/* About section styles */
-#about {
-  padding: 5rem 0;
-  background-color: #f0f0f0;
-}
-
-#about h3 {
-  font-size: 2.9rem;
-  font-weight: bold;
-  margin-left: -34.3vw;
-  color: black;
-}
-
-#about p {
-  font-size: 1.2rem;
-  color: black;
-}
-
-.profile-img {
-  border-radius: 50%;
-  height: 20vw;
-  width: 20vw;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
- 
-
-.col-md-4 {
-  padding-top: 20px;
-}
-
-/* Project Carousel */
-
-#projectcarousel h2 {
-  font-size: 2.9rem;
-  font-weight: bold;
-  color: black;
-  margin-left: -10px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding-bottom: 10px;
-}
-
-#projectcarousel {
-  padding: 50px;
-  background-color: #f7f7f7;
-}
-
-.carousel-wrapper {
-  width: 60%;
-  position: relative;
-  left: -15px;
-  padding-bottom: 10px;
-}
-
-#projectcarousel .carousel-inner img {
-  width: 100%;
-  max-height: 23.1vw;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-
-.carousel-item {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.carousel-caption {
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  right: 0;
-  height: auto;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  font-size: 1rem;
-}
-
-.custom-arrow-left,
-.custom-arrow-right {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23000' d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-  width: 30px;
-  height: 30px;
-}
-
-.carousel-control-prev .custom-arrow-left {
-  transform: scaleX(-1);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  opacity: 1;
-  width: 50px;
-  height: 100%;
-  top: 0;
-  background-color: transparent;
-  text-shadow: none;
-}
-
-.carousel-control-prev {
-  left: -100px;
-}
-
-.carousel-control-next {
-  right: -95px;
-}
-
-.carousel-control-prev:focus,
-.carousel-control-prev:hover,
-.carousel-control-next:focus,
-.carousel-control-next:hover {
-  opacity: 1;
-  color: gold;
-}
-
-.carousel-indicators {
-  bottom: -20px;
-}
-
-#projectcarousel .carousel-item a {
-  display: block;
-  text-decoration: none;
-}
-
-#projectcarousel .carousel-item:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-  border-radius: 10px;
-}
-
-.carousel-item {
-  outline: 5px solid transparent;
-}
-
-#projectcarousel .carousel-item:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-  outline: 5px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-#projectcarousel .carousel-item:hover img {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-
-/* Contact section styles */
-#contact {
-  padding: 5rem 0;
+.project-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   background-color: #e6e6e6;
 }
 
-#contact p {
-  color: black;
-  text-align: center;
-  font-size: 18px;
-  padding-bottom: 10px;
+.project-entry {
+  margin-bottom: 3rem;
+  position: relative;
 }
 
-#contact .card {
-  left: 135px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
+.project-entry .text-box {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  left: 60px;
+  padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 800px;
 }
 
-.card-title {
-  font-size: 36px;
-  font-weight: bold;
-  text-align: center;
-  bottom: 15px;
-  padding-bottom: 10px;
-  color: black;
+.project-entry .text-box p {
+  margin-bottom: 0;
 }
 
-.btn-primary {
-  background-color: gold;
-  border-color: gold;
-  color: black;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-  border-radius: 4px;
-  cursor: pointer;
-  outline: none;
-  white-space: nowrap;
+.project-entry .image-box {
+  position: relative;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: gold;
-  border-color: gold;
-  color: #fff;
-  text-decoration: none;
+.project-entry .image-box img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  filter: grayscale(100%) sepia(50%) hue-rotate(180deg) saturate(300%)
+    brightness(95%) contrast(85%) drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
-.btn-primary:active {
-  background-color: #2c3e50;
-  border-color: #2c3e50;
-  color: #fff;
-  text-decoration: none;
+.project-entry .image-box img:hover {
+  filter: none;
 }
 
-.icon-link i {
-  color: black;
+/* Individual project section adjustments */
+#project-movdb .project-entry .text-box {
+  margin: 55px 0 0 -100px;
 }
 
-.icon-link:hover i {
-  color: gold;
+#project-toolbox .project-entry .text-box {
+  margin: 75px 0 0 -100px;
 }
-/* Media Queries */
-@media (max-width: 991.98px) {
-  #about h3 {
-    font-size: 36px;
+
+#project-portfolio .project-entry .text-box {
+  margin: 55px 0 0 -100px;
+  top: -30px;
+}
+
+
+.project-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.project-buttons button {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+#project-movdb .project-buttons {
+  margin-top: 14rem;
+  margin-left: -1rem;
+}
+
+#project-toolbox .project-buttons {
+  margin-top: 18.5rem;
+  margin-left: -1rem;
+}
+
+#project-portfolio .project-buttons {
+  margin-top: 15.5rem;
+  margin-left: -1rem;
+}
+
+@media (max-width: 992px) {
+  .project-entry .text-box {
+    position: static;
+    margin: 1rem 0;
+    box-shadow: none;
+  }
+
+  .project-entry .image-box img {
+    border-radius: 5px;
+  
+  }
+
+  #project-movdb .project-entry .text-box,
+  #project-toolbox .project-entry .text-box,
+  #project-portfolio .project-entry .text-box {
+    margin: 1rem 0;
+  }
+
+  #project-movdb .project-buttons,
+  #project-toolbox .project-buttons,
+  #project-portfolio .project-buttons {
+    margin-top: 1rem;
     margin-left: 0;
   }
+}
 
-  .carousel-wrapper {
-    width: 100%;
+@media (max-width: 768px) {
+  .navbar-light .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.2);
   }
 
-  .carousel-control-prev {
-    left: -50px;
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280,0,0,0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
-  .carousel-control-next {
-    right: -50px;
-  }
-
-  #contact .card {
+  .navbar-collapse {
+    background-color: #e6e6e6;
+    position: absolute;
+    top: 7vh;
     left: 0;
-    width: 100%;
+    right: 0;
   }
 
-  .profile-img {
-    height: 35vw;
-    width: 35vw;
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 1rem; /* Add left padding to the nav links */
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 1);
+  }
+
+
+
+  
+  .project-entry .image-box img {
+    border-radius: 3px;
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 576px) {
+  #welcome h1 {
+    font-size: 2.5rem;
+  }
 
   .navbar-light .navbar-toggler {
     border-color: rgba(0, 0, 0, 0.2);
@@ -596,58 +483,13 @@ nav #logo {
 
 
 
-  #welcome h1 {
-    font-size: 4rem;
+  .project-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
-
-  #welcome h2 {
-    font-size: 1.5rem;
-  }
-
-  .profile-img {
-    height: 50vw;
-    width: 50vw;
-    margin-left: 21%;
-    margin-bottom: 20px;
-    padding: 5px;
-  }
-
-  #projectcarousel .carousel-inner img {
-    max-height: 40vw;
-  }
-
-  .col-md-4 {
-    padding-top: 0;
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    display: none;
-  }
-
-  .carousel-caption {
-    display: none;
-  }
-
-@media (max-width: 768px) {
-
-
-  #contact .card {
-      width: 80%;
-      margin-left: 10%;
-  }
-
-  .carousel-caption {
-    display: none;
-  }
-
-  #projectcarousel .carousel-inner img {
-    max-height: 60vw;
-  }
-
-  #about h3 {
-      margin-left: -10%;
+  
+  .project-entry .image-box img {
+    border-radius: 2px;
   }
 }
 
-}

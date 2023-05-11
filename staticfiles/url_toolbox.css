@@ -555,7 +555,7 @@ nav #logo {
     justify-content: center;
     align-items: center;
     padding: 1.25rem;
-    width: 90%; /* Adjusted width */
+    width: 50px; /* Adjusted width */
     height: 45vh;
   }
   
@@ -730,9 +730,9 @@ nav #logo {
   }
 
   .transparent-card {
-    width: calc(100% - 2rem); /* Adjust the width for mobile */
+    width: 50px;
     left: 50%;
-    transform: translateX(-50%); /* Center the card on mobile */
+    transform: translateX(-50%); 
   }
 
 }
